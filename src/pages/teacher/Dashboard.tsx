@@ -44,22 +44,22 @@ const TeacherDashboard = () => {
 
   return (
     <Sidebar role="teacher">
-      <div className="flex-1 p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
+      <div className="flex-1 p-4 md:p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
         <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-4xl font-extrabold text-slate-850 dark:text-white">
+            <h1 className="text-2xl md:text-4xl font-extrabold text-slate-850 dark:text-white">
               Welcome back, {currentUser?.name}! 👋
             </h1>
-            <p className="text-slate-500 dark:text-slate-400 mt-2 text-lg">
+            <p className="text-slate-500 dark:text-slate-400 mt-2 text-base md:text-lg">
               Here's what's happening in your classes today.
             </p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             {teacherCourses.length === 0 && (
               <button
                 onClick={handleAddSampleData}
                 disabled={isAddingSample}
-                className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
+                className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
               >
                 <Plus className="w-5 h-5" />
                 {isAddingSample ? 'Adding...' : 'Add Sample Data'}
@@ -68,7 +68,7 @@ const TeacherDashboard = () => {
             <button
               onClick={handleRefresh}
               disabled={isRefreshing}
-              className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
+              className="flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
             >
               <RefreshCw className={`w-5 h-5 ${isRefreshing ? 'animate-spin' : ''}`} />
               Refresh
@@ -76,61 +76,61 @@ const TeacherDashboard = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Total Students</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{totalStudents}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{totalStudents}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
-                <Users className="w-7 h-7 text-blue-600 dark:text-blue-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
+                <Users className="w-6 h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Active Courses</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{teacherCourses.length}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{teacherCourses.length}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-2xl flex items-center justify-center">
-                <BookOpen className="w-7 h-7 text-green-600 dark:text-green-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-green-600 dark:text-green-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Pending Submissions</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{pendingSubmissions}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{pendingSubmissions}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
-                <FileText className="w-7 h-7 text-amber-600 dark:text-amber-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
+                <FileText className="w-6 h-6 md:w-7 md:h-7 text-amber-600 dark:text-amber-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Average Score</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
                   {averageScore !== null ? `${averageScore}%` : '-'}
                 </p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
-                <TrendingUp className="w-7 h-7 text-purple-600 dark:text-purple-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
+                <TrendingUp className="w-6 h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-500" />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Recent Activity</h2>
+        <div className="grid grid-cols-1 gap-6">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-850 dark:text-white mb-5">Recent Activity</h2>
             <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center mt-1">
@@ -144,8 +144,8 @@ const TeacherDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Your Courses</h2>
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-850 dark:text-white mb-5">Your Courses</h2>
             <div className="space-y-3">
               {teacherCourses.map((course) => (
                 <div key={course.id} className="p-5 bg-gradient-to-br from-slate-50 to-cream-50 dark:from-slate-700 dark:to-slate-700 rounded-xl border border-slate-200 dark:border-slate-600 hover:shadow-md transition-shadow">

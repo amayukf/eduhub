@@ -25,9 +25,9 @@ const StudentDashboard = () => {
 
   const gradedSubmissions = studentSubmissions.filter((s) => s.grade !== undefined);
   const enrolledCourseIds = enrolledCourses.map(c => c.id);
-  const studentQuizAttempts = quizAttempts.filter(a => 
-    a.student_id === currentUser?.id && 
-    a.submitted_at && 
+  const studentQuizAttempts = quizAttempts.filter(a =>
+    a.student_id === currentUser?.id &&
+    a.submitted_at &&
     quizzes.some(q => q.id === a.quiz_id && enrolledCourseIds.includes(q.course_id))
   );
   const averageQuizScore = studentQuizAttempts.length > 0
@@ -36,71 +36,71 @@ const StudentDashboard = () => {
 
   return (
     <Sidebar role="student">
-      <div className="flex-1 p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
+      <div className="flex-1 p-4 md:p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
         <div className="mb-8">
-          <h1 className="text-4xl font-extrabold text-slate-850 dark:text-white">
+          <h1 className="text-2xl md:text-4xl font-extrabold text-slate-850 dark:text-white">
             Welcome back, {currentUser?.name}! 👋
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2 text-lg">
+          <p className="text-slate-500 dark:text-slate-400 mt-2 text-base md:text-lg">
             Continue your learning journey
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">My Courses</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{enrolledCourses.length}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{enrolledCourses.length}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
-                <BookOpen className="w-7 h-7 text-blue-600 dark:text-blue-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-blue-600 dark:text-blue-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Pending Work</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{upcomingWorksheets.length}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{upcomingWorksheets.length}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
-                <FileText className="w-7 h-7 text-amber-600 dark:text-amber-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
+                <FileText className="w-6 h-6 md:w-7 md:h-7 text-amber-600 dark:text-amber-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Graded</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{gradedSubmissions.length}</p>
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{gradedSubmissions.length}</p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-2xl flex items-center justify-center">
-                <CheckCircle className="w-7 h-7 text-green-600 dark:text-green-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-2xl flex items-center justify-center">
+                <CheckCircle className="w-6 h-6 md:w-7 md:h-7 text-green-600 dark:text-green-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Average Quiz Score</p>
-                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
+                <p className="text-3xl md:text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
                   {averageQuizScore !== null ? `${averageQuizScore}%` : '-'}
                 </p>
               </div>
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
-                <HelpCircle className="w-7 h-7 text-purple-600 dark:text-purple-500" />
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
+                <HelpCircle className="w-6 h-6 md:w-7 md:h-7 text-purple-600 dark:text-purple-500" />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Upcoming Deadlines</h2>
+        <div className="grid grid-cols-1 gap-6">
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-850 dark:text-white mb-5">Upcoming Deadlines</h2>
             <div className="space-y-3">
               {upcomingWorksheets.slice(0, 5).map((ws) => (
                 <div key={ws.id} className="flex items-center gap-4 p-4 bg-gradient-to-br from-slate-50 to-cream-50 dark:from-slate-700 dark:to-slate-700 rounded-xl border border-slate-200 dark:border-slate-600">
@@ -122,8 +122,8 @@ const StudentDashboard = () => {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
-            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">My Courses</h2>
+          <div className="bg-white dark:bg-slate-800 p-6 md:p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-850 dark:text-white mb-5">My Courses</h2>
             <div className="space-y-4">
               {enrolledCourses.map((course) => {
                 const courseNotes = notes.filter((n) => n.course_id === course.id);
