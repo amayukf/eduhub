@@ -36,88 +36,94 @@ const StudentDashboard = () => {
 
   return (
     <Sidebar role="student">
-      <div className="flex-1 p-8 bg-cream-50 dark:bg-slate-900 min-h-[calc(100vh-64px)]">
+      <div className="flex-1 p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-850 dark:text-white">
-            Welcome back, {currentUser?.name}!
+          <h1 className="text-4xl font-extrabold text-slate-850 dark:text-white">
+            Welcome back, {currentUser?.name}! 👋
           </h1>
-          <p className="text-slate-500 dark:text-slate-400 mt-2">
+          <p className="text-slate-500 dark:text-slate-400 mt-2 text-lg">
             Continue your learning journey
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">My Courses</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{enrolledCourses.length}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">My Courses</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{enrolledCourses.length}</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-blue-600 dark:text-blue-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-7 h-7 text-blue-600 dark:text-blue-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Pending Work</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{upcomingWorksheets.length}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Pending Work</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{upcomingWorksheets.length}</p>
               </div>
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
-                <FileText className="w-6 h-6 text-amber-600 dark:text-amber-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
+                <FileText className="w-7 h-7 text-amber-600 dark:text-amber-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Graded</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{gradedSubmissions.length}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Graded</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{gradedSubmissions.length}</p>
               </div>
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
-                <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-900/30 dark:to-emerald-900/30 rounded-2xl flex items-center justify-center">
+                <CheckCircle className="w-7 h-7 text-green-600 dark:text-green-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Average Quiz Score</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Average Quiz Score</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
                   {averageQuizScore !== null ? `${averageQuizScore}%` : '-'}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
-                <HelpCircle className="w-6 h-6 text-purple-600 dark:text-purple-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
+                <HelpCircle className="w-7 h-7 text-purple-600 dark:text-purple-500" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-850 dark:text-white mb-4">Upcoming Deadlines</h2>
-            <div className="space-y-4">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Upcoming Deadlines</h2>
+            <div className="space-y-3">
               {upcomingWorksheets.slice(0, 5).map((ws) => (
-                <div key={ws.id} className="flex items-center gap-4 p-3 bg-slate-50 dark:bg-slate-700 rounded-lg">
-                  <Clock className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                <div key={ws.id} className="flex items-center gap-4 p-4 bg-gradient-to-br from-slate-50 to-cream-50 dark:from-slate-700 dark:to-slate-700 rounded-xl border border-slate-200 dark:border-slate-600">
+                  <Clock className="w-6 h-6 text-amber-500 flex-shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="font-medium text-slate-800 dark:text-slate-200 truncate">{ws.title}</p>
-                    <p className="text-sm text-slate-500 dark:text-slate-400">
+                    <p className="font-semibold text-slate-800 dark:text-slate-200 truncate">{ws.title}</p>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
                       Due: {new Date(ws.due_date).toLocaleDateString()}
                     </p>
                   </div>
                 </div>
               ))}
+              {upcomingWorksheets.length === 0 && (
+                <div className="p-6 text-center text-slate-500 dark:text-slate-400">
+                  <p className="text-lg">No upcoming deadlines!</p>
+                  <p className="text-sm mt-1">Great job staying on top of your work!</p>
+                </div>
+              )}
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-850 dark:text-white mb-4">My Courses</h2>
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">My Courses</h2>
             <div className="space-y-4">
               {enrolledCourses.map((course) => {
                 const courseNotes = notes.filter((n) => n.course_id === course.id);
@@ -127,21 +133,27 @@ const StudentDashboard = () => {
                 const progress = courseNotes.length > 0 ? Math.round((readNotes.length / courseNotes.length) * 100) : 0;
 
                 return (
-                  <div key={course.id} className="p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
-                    <h3 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{course.title}</h3>
-                    <div className="flex items-center gap-2 mb-1">
+                  <div key={course.id} className="p-5 bg-gradient-to-br from-slate-50 to-cream-50 dark:from-slate-700 dark:to-slate-700 rounded-xl border border-slate-200 dark:border-slate-600">
+                    <h3 className="font-bold text-lg text-slate-800 dark:text-slate-200 mb-3">{course.title}</h3>
+                    <div className="flex items-center gap-3 mb-3">
                       <span className="text-sm text-slate-500 dark:text-slate-400">Progress</span>
-                      <span className="text-sm font-medium text-amber-600 dark:text-amber-500">{progress}%</span>
+                      <span className="text-sm font-bold text-amber-600 dark:text-amber-500">{progress}%</span>
                     </div>
-                    <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-2">
+                    <div className="w-full bg-slate-200 dark:bg-slate-600 rounded-full h-3">
                       <div
-                        className="bg-amber-500 h-2 rounded-full transition-all"
+                        className="bg-gradient-to-r from-amber-500 to-orange-500 h-3 rounded-full transition-all"
                         style={{ width: `${progress}%` }}
                       />
                     </div>
                   </div>
                 );
               })}
+              {enrolledCourses.length === 0 && (
+                <div className="p-6 text-center text-slate-500 dark:text-slate-400">
+                  <p className="text-lg">No courses enrolled yet!</p>
+                  <p className="text-sm mt-1">Go to Courses to get started!</p>
+                </div>
+              )}
             </div>
           </div>
         </div>

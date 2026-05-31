@@ -44,22 +44,22 @@ const TeacherDashboard = () => {
 
   return (
     <Sidebar role="teacher">
-      <div className="flex-1 p-8 bg-cream-50 dark:bg-slate-900 min-h-[calc(100vh-64px)]">
+      <div className="flex-1 p-8 bg-gradient-to-br from-cream-50 to-white dark:from-slate-900 dark:to-slate-800 min-h-[calc(100vh-64px)]">
         <div className="mb-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div>
-            <h1 className="text-3xl font-bold text-slate-850 dark:text-white">
-              Welcome back, {currentUser?.name}!
+            <h1 className="text-4xl font-extrabold text-slate-850 dark:text-white">
+              Welcome back, {currentUser?.name}! 👋
             </h1>
-            <p className="text-slate-500 dark:text-slate-400 mt-2">
+            <p className="text-slate-500 dark:text-slate-400 mt-2 text-lg">
               Here's what's happening in your classes today.
             </p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex gap-3">
             {teacherCourses.length === 0 && (
               <button
                 onClick={handleAddSampleData}
                 disabled={isAddingSample}
-                className="flex items-center gap-2 bg-green-500 hover:bg-green-600 disabled:opacity-50 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+                className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
               >
                 <Plus className="w-5 h-5" />
                 {isAddingSample ? 'Adding...' : 'Add Sample Data'}
@@ -68,7 +68,7 @@ const TeacherDashboard = () => {
             <button
               onClick={handleRefresh}
               disabled={isRefreshing}
-              className="flex items-center gap-2 bg-amber-500 hover:bg-amber-600 disabled:opacity-50 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+              className="flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 disabled:opacity-50 text-white px-5 py-3 rounded-xl font-semibold transition-all hover:shadow-lg transform hover:scale-[1.02]"
             >
               <RefreshCw className={`w-5 h-5 ${isRefreshing ? 'animate-spin' : ''}`} />
               Refresh
@@ -77,86 +77,86 @@ const TeacherDashboard = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Total Students</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{totalStudents}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Total Students</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{totalStudents}</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                <Users className="w-6 h-6 text-blue-600 dark:text-blue-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 rounded-2xl flex items-center justify-center">
+                <Users className="w-7 h-7 text-blue-600 dark:text-blue-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Active Courses</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{teacherCourses.length}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Active Courses</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{teacherCourses.length}</p>
               </div>
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-green-600 dark:text-green-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 rounded-2xl flex items-center justify-center">
+                <BookOpen className="w-7 h-7 text-green-600 dark:text-green-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Pending Submissions</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">{pendingSubmissions}</p>
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Pending Submissions</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">{pendingSubmissions}</p>
               </div>
-              <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-lg flex items-center justify-center">
-                <FileText className="w-6 h-6 text-amber-600 dark:text-amber-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center">
+                <FileText className="w-7 h-7 text-amber-600 dark:text-amber-500" />
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl transition-shadow">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-slate-500 dark:text-slate-400">Average Score</p>
-                <p className="text-3xl font-bold text-slate-850 dark:text-white mt-1">
+                <p className="text-sm font-semibold text-slate-500 dark:text-slate-400">Average Score</p>
+                <p className="text-4xl font-extrabold text-slate-850 dark:text-white mt-2">
                   {averageScore !== null ? `${averageScore}%` : '-'}
                 </p>
               </div>
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
-                <TrendingUp className="w-6 h-6 text-purple-600 dark:text-purple-500" />
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 rounded-2xl flex items-center justify-center">
+                <TrendingUp className="w-7 h-7 text-purple-600 dark:text-purple-500" />
               </div>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-850 dark:text-white mb-4">Recent Activity</h2>
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Recent Activity</h2>
             <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center mt-1">
-                  <Activity className="w-5 h-5 text-amber-600 dark:text-amber-500" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/30 dark:to-orange-900/30 rounded-2xl flex items-center justify-center mt-1">
+                  <Activity className="w-6 h-6 text-amber-600 dark:text-amber-500" />
                 </div>
                 <div>
-                  <p className="text-slate-800 dark:text-slate-200">Get started by creating a course!</p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Go to Courses to add your first class</p>
+                  <p className="text-slate-800 dark:text-slate-200 font-medium">Get started by creating a course!</p>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">Go to Courses to add your first class</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white dark:bg-slate-800 p-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
-            <h2 className="text-xl font-bold text-slate-850 dark:text-white mb-4">Your Courses</h2>
+          <div className="bg-white dark:bg-slate-800 p-7 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-lg">
+            <h2 className="text-2xl font-bold text-slate-850 dark:text-white mb-5">Your Courses</h2>
             <div className="space-y-3">
               {teacherCourses.map((course) => (
-                <div key={course.id} className="p-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
-                  <h3 className="font-semibold text-slate-800 dark:text-slate-200">{course.title}</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">{course.subject} • Grade {course.grade}</p>
+                <div key={course.id} className="p-5 bg-gradient-to-br from-slate-50 to-cream-50 dark:from-slate-700 dark:to-slate-700 rounded-xl border border-slate-200 dark:border-slate-600 hover:shadow-md transition-shadow">
+                  <h3 className="font-bold text-lg text-slate-800 dark:text-slate-200">{course.title}</h3>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">{course.subject} • Grade {course.grade}</p>
                 </div>
               ))}
               {teacherCourses.length === 0 && (
-                <div className="p-6 text-center text-slate-500 dark:text-slate-400">
-                  <BookOpen className="w-12 h-12 mx-auto mb-3 opacity-50" />
-                  <p>No courses yet</p>
+                <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+                  <BookOpen className="w-16 h-16 mx-auto mb-4 opacity-50" />
+                  <p className="text-lg font-medium mb-2">No courses yet</p>
                   <p className="text-sm">Create your first course to get started!</p>
                 </div>
               )}
